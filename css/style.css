@@ -377,6 +377,8 @@ footer {
 }
 .nav-footer li {
     margin-right: 60px;
+}
+.nav-footer a {
     color: #929ECC;
 }
 .social-links li {
