@@ -4,13 +4,13 @@ html{
 *,
 *::before,
 *::after{
-    box-sizing: inherit;
+    box-sizing: border-box;
 }
 body{
     background-color: #FFFFFF;
     font-family: "Roboto", sans-serif;
-    min-width: 1440px;
     margin: auto;
+    height: 100%;
 }
 h1,
 h2,
@@ -41,8 +41,8 @@ img{
     list-style: none;
 }
 header {
-    width: 100%;
-    height: 1161px;
+    max-width: 100%;
+    max-width: 100%;
     background-position: right center;
 }
 .container{
@@ -62,6 +62,12 @@ header {
     font-size: 14px;
     font-weight: 400;
     margin-right: 60px;
+    color: #505F98;
+}
+
+.h-nav a {
+    font-size: 14px;
+    font-weight: 400;
     color: #505F98;
 }
 .h-logo {
@@ -87,6 +93,7 @@ header {
     display: flex;  
     justify-content: center;
     width: 100%;
+    height: 100%;
 }
 .background {
     background-image: url(/image/background.jpg);
@@ -95,9 +102,10 @@ header {
     background-size: auto;
 }
 .background-container{
-    max-width: 1920px;
+    max-width: 1440px;
     margin-left: auto;
     margin-right: auto;
+    height: 100%;
 }
 .hero-section img {
     height: 780px;
@@ -115,6 +123,9 @@ header {
     font-size: 50px;
     line-height: 60px;
     font-weight: 500;
+}
+.img-hero {
+    display: block;
 }
 .hero-section p {
     font-size: 18px;
@@ -237,7 +248,8 @@ header {
 .card p {
     font-size: 16px;
     line-height: 26px;
-    color: #6F7CB2;
+}
+color: #6F7CB2;
     margin-top: 16px;
     margin-bottom: 40px;
 }
@@ -315,8 +327,10 @@ header {
     display: flex;
     flex-wrap: wrap;
     align-items:center;
-    justify-content: center;
-    gap: 30rem;
+    justify-content: space-between;
+    margin-right: 50px;
+    margin-left: 50px;
+    
 }
 .hight-footer h1 {
     padding-right: 30px;
@@ -367,7 +381,6 @@ footer {
     margin-right: auto;
     padding-left: 48px;
     padding-right: 22px;
-
 }
 .nav-footer {
     display: flex;
@@ -377,8 +390,6 @@ footer {
 }
 .nav-footer li {
     margin-right: 60px;
-}
-.nav-footer a {
     color: #929ECC;
 }
 .social-links li {
@@ -392,4 +403,208 @@ footer {
     margin-right: auto;
     margin-top: 40px;
     margin-bottom: 20px;
+}
+@media (max-width: 550px) {
+    .h-nav {
+        display: none;
+    }
+    .img-hero{
+        display: none;
+    }
+    .social-links {
+        display: none;
+    }
+    .nav-footer{
+        display: none;
+    }
+    hr {
+        display: none;
+    }
+    .hero-section {
+        text-align: left;
+        width: 400px;
+    }
+    .hero-text{
+        max-width: 400px;
+        margin-left: 0;
+        margin-top: 60px;
+        height: 100%;
+        text-align: center;
+    }
+    .hero-text p {
+        font-size: 14px;
+    }
+    .button {
+        margin-left: 64px;
+    }
+    .container {
+        justify-content: left;
+    }
+    .h-logo {
+        margin-left: 5px;
+    }
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+    body {
+        overflow-x: hidden;
+    }
+    .protein-sect {
+        flex-direction: column;
+        max-width: 420px;
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+    .btn-hero-primary,.btn-hero-secondory {
+        margin-top: 34px;
+        margin-right: 0;
+    }
+    .btn-hero-secondory {
+        margin-top: 17px;
+        margin-bottom: 20px;
+        margin-left: 10px;
+    }
+    .card img {
+        display: none;
+    }
+    .card-sect {
+        justify-content: center;
+    }
+    .card-text {
+        max-width: 400px;
+    }
+    .container-protein {
+        max-width: 100%;
+        margin-left: 10px;
+    }
+    .container-protein p {
+        max-width: 400px;
+    }
+    .lorem-text {
+        font-size: 12px;
+    }
+    .last-container {
+        max-width: 400px;
+    }
+    .tilt li {
+        max-width: 200px;
+    }
+    .tilt-text {
+        display: none;
+    }
+    .protein-sect {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .card {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .hight-footer {
+        gap: 0;
+    }
+}
+
+@media (max-width: 1260px) {
+    html, body {
+        overflow-x: hidden;
+        max-width: 1260px;
+    }
+    .h-logo {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .main-container img {
+        display: none;
+    }
+    .button {
+        margin-left: 0;
+    }
+    header {
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .container {
+        max-width: 100%;
+        justify-items: center;
+        justify-content: space-between;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .background-container{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .background {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .hero-section {
+        max-width: 100%;
+        justify-items: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .card-sect img {
+        display: none;
+    }
+    .card-sect p {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .card-sect h2 {
+        margin-bottom: 20px;
+    }
+    .card-sect {
+        text-align: center;
+        max-width: 100%;
+        justify-items: center;
+    }
+    .cards {
+        max-width: 100% ;
+    }
+    .card-buttom {
+        margin-top: 30px;
+    }
+    .hight-footer {
+        gap: 0;
+        justify-content: space-between;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .low-footer {
+        max-width: 100%;
+    }
+    .sect-last {
+        width: 100%;
+    }
+}
+@media (max-width: 1050px) {
+    .background {
+        background-image: none;
+        background-color:#E7ECFF ;
+    }
+    .img-hero {
+        display: none;
+    }
+    .hero-text{
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 110px;
+        height: 100%;
+    }
+    .btn-hero-secondory,.btn-hero-primary {
+        margin-top: 34px;
+    }
+    .hero-section {
+        padding-bottom: 20px;
+    }
+    .h-nav li {
+        margin-right: 30px;
+    }
+
 }
