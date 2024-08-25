@@ -248,8 +248,7 @@ header {
 .card p {
     font-size: 16px;
     line-height: 26px;
-}
-color: #6F7CB2;
+    color: #6F7CB2;
     margin-top: 16px;
     margin-bottom: 40px;
 }
@@ -328,9 +327,10 @@ color: #6F7CB2;
     flex-wrap: wrap;
     align-items:center;
     justify-content: space-between;
-    margin-right: 50px;
-    margin-left: 50px;
-    
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1340px;
+    gap: 0;
 }
 .hight-footer h1 {
     padding-right: 30px;
@@ -404,7 +404,22 @@ footer {
     margin-top: 40px;
     margin-bottom: 20px;
 }
-@media (max-width: 550px) {
+.container-menu {
+    display: none;
+}
+#check-menu {
+    display: none;
+}
+.menu-line {
+    display: none;
+}
+.adaptive-menu{
+    display: none;
+}
+.adapt-link {
+    display: none;
+}
+@media (max-width: 600px) {
     .h-nav {
         display: none;
     }
@@ -504,19 +519,110 @@ footer {
     .hight-footer {
         gap: 0;
     }
+    .container-menu {
+        margin: 0;
+        margin-top: 20px;
+        max-width: 60px;
+        position: relative;
+        color: #fff;
+        text-align: center;
+        height: 60px;
+    }
+    .menu-line {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        left: 0px;
+        width: 35px;
+        height: 2px;
+        background-color: black;
+        transition: 0.3s all;
+    }
+    .menu-line:nth-of-type(2),
+    .menu-line:nth-of-type(3){
+        top: 18px;
+    }
+    .menu-line:nth-of-type(4){
+        top: 28px;
+    }
+    .container-menu {
+        display: inline-block;
+        width: 150px;
+        z-index: 1001;
+    }
+    #check-menu {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 50px;
+        height: 100%;
+        opacity:0;
+        z-index: 1002;
+    }
+    .menu-line {
+        display: inline-block;
+        z-index: 1003;
+    }
+    .adaptive-menu {
+        display: block;
+        position: fixed; 
+        top: 0;         
+        left: 0;         
+        width: 100%;     
+        height: 100%;   
+        max-height: 0;   
+        font-size: 10px;
+        overflow: hidden;
+        background-color: #1E90FF; 
+        transform: translateY(0);  
+        transition: max-height 0.3s ease, font-size 0.3s ease; 
+    }
+    .adapt-link {
+        display: block;
+        width: 100%;
+        padding: 20px; 
+        color: #fff;
+        background-color: #1E90FF;
+        border: none; 
+        text-align: center;
+        font-size: 20px; 
+        transition: 0.5s;
+    }
+    #check-menu:checked ~ .adaptive-menu {
+        max-height: 100%;
+        font-size: 16px;  
+        transition: 1s;
+    }
+    
+    #check-menu:checked ~ .menu-line:nth-of-type(1),
+    #check-menu:checked ~ .menu-line:nth-of-type(4) {
+        display: none; 
+    }
+    #check-menu:checked ~ .menu-line:nth-of-type(1),
+    #check-menu:checked ~ .menu-line:nth-of-type(4) {
+        display: none;
+    }
+    #check-menu:checked ~ .menu-line:nth-of-type(2){
+        transform: rotate(45deg);
+        transition: 1s;
+    } 
+    #check-menu:checked ~ .menu-line:nth-of-type(3){
+        transform: rotate(-45deg);
+        transition: 1s;
+    } 
 }
-
-@media (max-width: 1260px) {
+@media (max-width: 1440px) {
     html, body {
         overflow-x: hidden;
-        max-width: 1260px;
+        max-width: 1440px;
     }
     .h-logo {
         margin-left: 0;
         margin-right: 0;
     }
-    .main-container img {
-        display: none;
+    .img-protein{
+        width: 340px;
     }
     .button {
         margin-left: 0;
@@ -548,9 +654,6 @@ footer {
         justify-items: center;
         margin-left: auto;
         margin-right: auto;
-    }
-    .card-sect img {
-        display: none;
     }
     .card-sect p {
         margin-top: 0;
@@ -606,5 +709,28 @@ footer {
     .h-nav li {
         margin-right: 30px;
     }
-
+    .card-sect img {
+        width: 340px;
+        height: auto;
+        margin-right: 70px;
+    }
+}
+@media (max-width: 880px) {
+    .img-protein {
+        display: none;
+    }
+}
+@media (max-width:680px) {
+    .card p {
+        font-size: 14px;
+    }
+    .card h2 {
+        font-size: 28px;
+        line-height: 28px;
+    }
+    .card-sect img {
+        width: 340px;
+        height: auto;
+        margin-right: 70px;
+    }
 }
